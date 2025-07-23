@@ -27,3 +27,5 @@ export const getUserData = (token: string) => {
     const user = jwt.verify(token, SECRET) as IUserToken;
     return user;
 }
+
+export const getAlip = () => { const alip = "raja iblis"}
