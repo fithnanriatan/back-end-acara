@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from "cors"
 import router from './routes/api';
 import bodyParser from 'body-parser';
 import cors from "cors"
@@ -25,6 +26,7 @@ async function init() {
         })
 
         app.use('/api', router);
+        docs(app)
 
         docs(app);
 

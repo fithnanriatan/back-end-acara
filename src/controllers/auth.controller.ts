@@ -111,7 +111,7 @@ export default {
     async me(req: IReqUser, res: Response) {
         /**
          #swagger.security = [{
-         "bearerAuth" : []
+            "bearerAuth": []
          }]
          */
         try {

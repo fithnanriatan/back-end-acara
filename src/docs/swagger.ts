@@ -14,7 +14,7 @@ const doc = {
         {
             url: "https://back-end-acara-fithnan.vercel.app/api",
             description: "Deploy Server"
-        },
+        }
     ],
     components: {
         securitySchemes: {
