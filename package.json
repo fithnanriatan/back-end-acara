@@ -35,5 +35,8 @@
     "ts-node": "10.9.2",
     "typescript": "^5.4.5",
     "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "@vercel/node": "^2.0.0"
   }
 }

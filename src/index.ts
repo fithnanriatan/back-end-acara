@@ -12,10 +12,13 @@ async function init() {
         
         const app = express();
 
-        app.use(cors())
+        app.use(cors)
         app.use(bodyParser.json())
 
         const PORT = 3000;
+
+        app.use('/api', router);
+        docs(app)
 
         app.get('/', (req, res) => {
             res.status(200).json({
@@ -26,8 +29,6 @@ async function init() {
 
         app.use('/api', router);
         docs(app)
-
-        docs(app);
 
         app.listen(PORT, () => {
             console.log(`Server is running on http://localhost:${PORT}`);
