@@ -21,19 +21,18 @@ const doc = {
             bearerAuth: {
                 type: "http",
                 scheme: "bearer",
-                bearerFormat: "JWT"
             }
         },
         schemas: {
             LoginRequest: {
-                "identifier": "natairnanhtif",
-                "password": "nata739"
+                identifier: "natairnanhtif",
+                password: "nata739"
             }
         }
     }
 }
 
-const outputFile = "./swagger_output.json"
+const outputFile = "./swagger_output.json";
 const endpointsFiles = ["../routes/api.ts"]
 
-swaggerAutogen({ openapi: "3.0.0" })(outputFile, endpointsFiles, doc)
+swaggerAutogen({ openapi: "3.0.0" })(outputFile, endpointsFiles, doc);
