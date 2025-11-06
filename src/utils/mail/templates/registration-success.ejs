@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMOVIE - Activation User</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1f2e 0%, #2d3748 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #2d3748;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: slideUp 0.6s ease-out;
+            border: 1px solid #4a5568;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #319795, #2c7a7b);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.1) 1px,
+                transparent 1px,
+                transparent 20px
+            );
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%); }
+            100% { transform: translateX(100%) translateY(100%); }
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .content {
+            padding: 40px 30px;
+            color: #e2e8f0;
+            background: #2d3748;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #cbd5e0;
+        }
+
+        .content p:first-child {
+            font-size: 18px;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+
+        .content ul {
+            background: #1a202c;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 4px solid #319795;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .content ul li {
+            margin-bottom: 12px;
+            font-size: 15px;
+            color: #a0aec0;
+            padding-left: 8px;
+        }
+
+        .content ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .content ul li strong {
+            color: #e2e8f0;
+            font-weight: 600;
+            display: inline-block;
+            min-width: 160px;
+        }
+
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #319795, #2c7a7b);
+            color: white;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            margin: 20px 0;
+            box-shadow: 0 8px 20px rgba(49, 151, 149, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(49, 151, 149, 0.4);
+        }
+
+        .button:hover::before {
+            left: 100%;
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        .footer {
+            background: #1a202c;
+            color: #a0aec0;
+            text-align: center;
+            padding: 25px 30px;
+            font-size: 14px;
+            border-top: 1px solid #4a5568;
+        }
+
+        .footer p {
+            margin: 0;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                border-radius: 8px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .content ul li strong {
+                min-width: 120px;
+                display: block;
+                margin-bottom: 4px;
+            }
+
+            .button {
+                padding: 14px 28px;
+                font-size: 15px;
+            }
+
+            .footer {
+                padding: 20px;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            .content {
+                background: #2d3748;
+            }
+            
+            .content ul {
+                background: #1a202c;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .button {
+                background: #333 !important;
+                color: white !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Selamat Datang!</h1>
+        </div>
+        <div class="content">
+            <p>Halo <%= username %>,</p>
+            <p>Terimakasih telah mendaftar dilayanan kami. Berikut adalah informasi dari akun Anda:</p>
+            <ul>
+                <li><strong>Nama :</strong> <%= fullName %> </li>
+                <li><strong>Email :</strong> <%= email %> </li>
+                <li><strong>Tanggal Pendaftaran :</strong> <%= createdAt %> </li>
+            </ul>
+            <p>Untuk memulai, silahkan klik tombol dibawah ini: </p>
+            <a href="<%= activationLink %>" class="button">Aktifkan Akun</a>
+            <p>Jika anda memiliki pertanyaan, jangan ragu untuk menghubungi kami</p>
+            <p>Salam hangat, <strong>OMOVIE</strong></p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2025 OMOVIE Event Management System. Semua Hak Dilindungi</p>
+        </div>
+    </div>
+</body>
+</html>
