@@ -27,6 +27,16 @@ const doc = {
             LoginRequest: {
                 identifier: "natairnanhtif",
                 password: "nata739"
+            },
+            RegisterRequest: {
+                fullName: "Nata Sama",
+                username: "nata123",
+                email: "natairnanhtif@gmail.com",
+                password: "12345678",
+                confirmPassword: "12345678"
+            },
+            ActivationRequest: {
+                code: "abcdefg"
             }
         }
     }
